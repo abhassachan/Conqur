@@ -5,7 +5,7 @@
 
 **A GPS-powered, full-stack territory conquest game that turns outdoor running into a competitive turf war.**
 
-[![Build Android APK](https://github.com/abhassachan/Minor_Project/actions/workflows/build-android.yml/badge.svg)](https://github.com/abhassachan/Minor_Project/actions/workflows/build-android.yml)
+[![Build Android APK](https://github.com/abhassachan/Conqur/actions/workflows/build-android.yml/badge.svg)](https://github.com/abhassachan/Conqur/actions/workflows/build-android.yml)
 [![Vercel Deployment](https://img.shields.io/badge/Vercel-Live_App-black?logo=vercel)](https://conqurr.vercel.app/)
 [![Render Backend](https://img.shields.io/badge/Render-API_Online-46E3B7?logo=render&logoColor=white)](https://territory-run-api.onrender.com)
 [![Capacitor](https://img.shields.io/badge/Capacitor_8-Native_Android-119EFF?logo=capacitor&logoColor=white)](https://capacitorjs.com/)
@@ -113,8 +113,8 @@ flowchart TD
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/abhassachan/Minor_Project.git
-cd Minor_Project
+git clone https://github.com/abhassachan/Conqur.git
+cd Conqur
 ```
 
 ---
