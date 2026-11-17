@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import ThemeToggle from '../components/ThemeToggle';
+import { Download, Smartphone, Zap, ShieldCheck, MapPin } from 'lucide-react';
 
 export default function LandingPage() {
     const canvasRef = useRef(null);
@@ -107,11 +108,21 @@ export default function LandingPage() {
                     </Link>
                     <div className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-wider">
                         <a className="hover:text-brand-teal transition-colors" href="#how-it-works">How it Works</a>
+                        <a className="hover:text-brand-teal transition-colors" href="#mobile-app">Mobile App</a>
                         <a className="hover:text-brand-teal transition-colors" href="#map">Leaderboard</a>
                         <a className="hover:text-brand-teal transition-colors" href="#rivals">About</a>
                     </div>
                     <div className="flex items-center gap-3">
                         <ThemeToggle />
+                        <a
+                            href="/CONQUR.apk"
+                            download="CONQUR.apk"
+                            className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold border border-brand-teal/40 text-brand-teal hover:bg-brand-teal hover:text-white transition-all shadow-sm"
+                            title="Download Android APK (v1.0)"
+                        >
+                            <Download className="w-3.5 h-3.5" />
+                            <span>GET APK</span>
+                        </a>
                         <Link to="/auth"
                             className="bg-brand-teal text-white px-6 py-2.5 rounded-full font-bold text-sm tracking-wide hover:opacity-90 transition-all flex items-center gap-2">
                             OPEN APP <span className="text-lg">→</span>
@@ -125,26 +136,45 @@ export default function LandingPage() {
                 <canvas ref={canvasRef} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 5 }} />
                 <div className="container mx-auto grid lg:grid-cols-2 gap-16 items-center">
                     <div className="z-10 animate-fade-up">
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-teal/10 dark:bg-brand-teal/20 text-brand-teal text-xs font-mono font-bold mb-6">
+                            <span className="w-2 h-2 rounded-full bg-brand-teal animate-pulse"></span>
+                            NOW AVAILABLE ON WEB & NATIVE ANDROID
+                        </div>
                         <h1 className="hero-heading text-7xl md:text-8xl lg:text-9xl font-heading text-brand-ink dark:text-dark-text mb-6">
                             RUN.<br />CAPTURE.<br />CONQUER.
                         </h1>
-                        <p className="text-xl text-brand-muted dark:text-dark-muted max-w-md mb-10 leading-relaxed">
-                            The city is a board game. Claim map zones by running through them and become the local legend. No downloads, just running.
+                        <p className="text-xl text-brand-muted dark:text-dark-muted max-w-md mb-8 leading-relaxed">
+                            The city is a board game. Claim map zones by running through them and become the local legend. Run in your browser or install the native Android app.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                        <div className="flex flex-col sm:flex-row gap-4 mb-6">
                             <Link to="/auth"
-                                className="bg-brand-teal text-white px-8 py-4 rounded-full font-bold text-lg text-center hover:scale-105 transition-transform">
-                                Start Running — It&#39;s Free
+                                className="bg-brand-teal text-white px-8 py-4 rounded-full font-bold text-lg text-center hover:scale-105 transition-transform shadow-lg shadow-brand-teal/20 flex items-center justify-center gap-2">
+                                Start Running — Free
                             </Link>
-                            <a className="bg-white dark:bg-dark-surface border border-brand-ink/10 dark:border-dark-border text-brand-ink dark:text-dark-text px-8 py-4 rounded-full font-bold text-lg text-center hover:bg-brand-ink hover:text-white dark:hover:bg-dark-surface2 transition-all"
-                                href="#how-it-works">
-                                See how it works
+                            <a
+                                href="/CONQUR.apk"
+                                download="CONQUR.apk"
+                                className="bg-brand-ink text-white dark:bg-white dark:text-brand-ink px-8 py-4 rounded-full font-bold text-lg text-center hover:scale-105 transition-transform flex items-center justify-center gap-2.5 shadow-md">
+                                <Download className="w-5 h-5 text-brand-teal" />
+                                <span>Download APK</span>
+                                <span className="text-xs bg-brand-teal/20 text-brand-teal dark:bg-brand-teal/30 px-2 py-0.5 rounded-full font-mono font-bold">4.8 MB</span>
                             </a>
                         </div>
-                        <p className="text-sm font-mono text-brand-muted dark:text-dark-muted flex items-center gap-2">
-                            <span className="w-2 h-2 rounded-full bg-brand-teal animate-pulse"></span>
-                            No download needed. PWA powered.
-                        </p>
+                        <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-brand-muted dark:text-dark-muted">
+                            <span className="flex items-center gap-1.5">
+                                <span className="w-2 h-2 rounded-full bg-brand-teal"></span>
+                                Live PWA
+                            </span>
+                            <span>•</span>
+                            <span className="flex items-center gap-1.5">
+                                <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                                Android 9+ Compatible
+                            </span>
+                            <span>•</span>
+                            <a href="#mobile-app" className="text-brand-teal hover:underline flex items-center gap-1">
+                                Install guide ↓
+                            </a>
+                        </div>
                     </div>
 
                     {/* Hero Map Visual */}
@@ -180,8 +210,8 @@ export default function LandingPage() {
                             <p className="text-xs uppercase tracking-widest text-brand-muted font-bold">Cities</p>
                         </div>
                         <div>
-                            <p className="text-3xl md:text-4xl font-mono font-bold text-brand-teal mb-1">0</p>
-                            <p className="text-xs uppercase tracking-widest text-brand-muted font-bold">App Downloads</p>
+                            <p className="text-3xl md:text-4xl font-mono font-bold text-brand-teal mb-1">Android</p>
+                            <p className="text-xs uppercase tracking-widest text-brand-muted font-bold">APK Available</p>
                         </div>
                     </div>
                 </div>
@@ -197,7 +227,7 @@ export default function LandingPage() {
                     <div className="grid md:grid-cols-3 gap-12 relative">
                         <div className="hidden md:block absolute top-1/2 left-0 w-full h-px bg-brand-ink/10 dark:bg-dark-border -z-0"></div>
                         {[
-                            { emoji: '🏃', title: 'Run Your Route', desc: 'Open the web app and start your run. Our GPS tracks your path across the city grid in real-time.', color: 'teal' },
+                            { emoji: '🏃', title: 'Run Your Route', desc: 'Open the app and start your run. High-precision GPS tracks your path across the city grid in real-time.', color: 'teal' },
                             { emoji: '🚩', title: 'Claim Territory', desc: 'Complete loops or cover new ground to claim zones. The more you run, the larger your empire grows.', color: 'ink' },
                             { emoji: '👑', title: 'Dominate the Map', desc: 'Compete with local runners, defend your zones, and rise through the ranks to become the territory king.', color: 'teal' },
                         ].map((step, i) => (
@@ -209,6 +239,76 @@ export default function LandingPage() {
                                 <p className="text-brand-muted dark:text-dark-muted">{step.desc}</p>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* DEDICATED MOBILE APP SHOWCASE */}
+            <section className="py-20 px-6 bg-brand-offwhite dark:bg-dark-bg border-t border-b border-brand-ink/5 dark:border-dark-border transition-colors duration-300" id="mobile-app">
+                <div className="container mx-auto max-w-5xl reveal">
+                    <div className="bg-gradient-to-br from-brand-ink via-slate-900 to-black text-white p-8 md:p-14 rounded-3xl shadow-2xl relative overflow-hidden">
+                        <div className="absolute -right-20 -top-20 w-72 h-72 bg-brand-teal/15 rounded-full blur-3xl pointer-events-none"></div>
+                        <div className="relative z-10 grid md:grid-cols-2 gap-10 items-center">
+                            <div>
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-teal/20 text-brand-teal text-xs font-mono font-bold mb-4">
+                                    <Smartphone className="w-3.5 h-3.5" /> NATIVE ANDROID APP
+                                </div>
+                                <h3 className="text-3xl md:text-5xl font-heading mb-4 leading-tight">TAKE CONQUR ON YOUR RUNS</h3>
+                                <p className="text-white/70 text-sm md:text-base mb-6 leading-relaxed">
+                                    Install the native Android app for high-precision background GPS tracking, tactile haptic feedback when capturing zones, and real-time territory notifications.
+                                </p>
+                                <div className="space-y-3 mb-8">
+                                    <div className="flex items-center gap-3 text-sm text-white/90">
+                                        <div className="w-6 h-6 rounded-full bg-brand-teal/20 text-brand-teal flex items-center justify-center text-xs">
+                                            <Zap className="w-3.5 h-3.5" />
+                                        </div>
+                                        <span>Direct hardware GPS lock for ultra-accurate path recording</span>
+                                    </div>
+                                    <div className="flex items-center gap-3 text-sm text-white/90">
+                                        <div className="w-6 h-6 rounded-full bg-brand-teal/20 text-brand-teal flex items-center justify-center text-xs">
+                                            <ShieldCheck className="w-3.5 h-3.5" />
+                                        </div>
+                                        <span>Safe & lightweight build (~4.8 MB, Android 9+)</span>
+                                    </div>
+                                    <div className="flex items-center gap-3 text-sm text-white/90">
+                                        <div className="w-6 h-6 rounded-full bg-brand-teal/20 text-brand-teal flex items-center justify-center text-xs">
+                                            <MapPin className="w-3.5 h-3.5" />
+                                        </div>
+                                        <span>Syncs instantly with your web dashboard & clan wars</span>
+                                    </div>
+                                </div>
+                                <div className="flex flex-col sm:flex-row gap-3">
+                                    <a
+                                        href="/CONQUR.apk"
+                                        download="CONQUR.apk"
+                                        className="bg-brand-teal hover:bg-emerald-400 text-white font-bold px-7 py-3.5 rounded-full text-center transition-all flex items-center justify-center gap-2 text-sm shadow-lg shadow-brand-teal/30 hover:scale-105"
+                                    >
+                                        <Download className="w-4 h-4" /> Download APK (v1.0 • 4.8 MB)
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 backdrop-blur-sm">
+                                <h4 className="text-xs font-mono uppercase tracking-widest text-brand-teal font-bold mb-4">Quick 3-Step Installation</h4>
+                                <ol className="space-y-4 text-xs md:text-sm text-white/80">
+                                    <li className="flex items-start gap-3">
+                                        <span className="w-6 h-6 rounded-full bg-brand-teal/20 text-brand-teal flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
+                                        <span>Tap <strong>Download APK</strong> to save <code>CONQUR.apk</code> to your device.</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="w-6 h-6 rounded-full bg-brand-teal/20 text-brand-teal flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+                                        <span>Open the file from your notifications or <em>Downloads</em> folder.</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="w-6 h-6 rounded-full bg-brand-teal/20 text-brand-teal flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
+                                        <span>Tap <strong>Install</strong> (enable <em>"Allow from this source"</em> if prompted) and start conquering!</span>
+                                    </li>
+                                </ol>
+                                <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between text-xs text-white/60">
+                                    <span>Package: <code>com.conqur.app</code></span>
+                                    <span>Version: <code>1.0.0</code></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -270,12 +370,21 @@ export default function LandingPage() {
                 <div className="container mx-auto reveal">
                     <h2 className="text-5xl md:text-7xl font-heading text-white mb-6">READY TO CONQUER?</h2>
                     <p className="text-brand-muted max-w-md mx-auto mb-10 text-lg">
-                        Join thousands of runners claiming their cities. No app download needed.
+                        Join thousands of runners claiming their cities on Web & Android.
                     </p>
-                    <Link to="/auth"
-                        className="inline-block bg-brand-teal text-white px-10 py-5 rounded-full font-bold text-xl hover:scale-105 transition-transform">
-                        Start Your Empire →
-                    </Link>
+                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <Link to="/auth"
+                            className="inline-block bg-brand-teal text-white px-10 py-5 rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-lg shadow-brand-teal/20">
+                            Start Your Empire →
+                        </Link>
+                        <a
+                            href="/CONQUR.apk"
+                            download="CONQUR.apk"
+                            className="inline-flex items-center gap-2 border border-white/20 hover:border-white/40 text-white px-8 py-5 rounded-full font-bold text-lg transition-all hover:bg-white/10"
+                        >
+                            <Download className="w-5 h-5 text-brand-teal" /> Download Android APK
+                        </a>
+                    </div>
                 </div>
             </section>
 
@@ -286,7 +395,10 @@ export default function LandingPage() {
                         <span className="text-brand-teal font-black">C</span><span className="text-white">ONQU</span><span className="text-brand-teal font-black">R</span>
                     </div>
                     <p className="text-brand-muted text-sm">© 2025 CONQUR. All rights reserved.</p>
-                    <div className="flex gap-6 text-brand-muted text-sm">
+                    <div className="flex flex-wrap items-center gap-6 text-brand-muted text-sm">
+                        <a href="/CONQUR.apk" download="CONQUR.apk" className="text-brand-teal hover:underline flex items-center gap-1.5 font-medium">
+                            <Download className="w-4 h-4" /> Download APK
+                        </a>
                         <a className="hover:text-white transition-colors" href="#">Privacy</a>
                         <a className="hover:text-white transition-colors" href="#">Terms</a>
                         <a className="hover:text-white transition-colors" href="#">Contact</a>

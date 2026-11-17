@@ -40,7 +40,9 @@ jobs:
 
       - name: Copy Web Assets into Android Project
         working-directory: frontend
-        run: npx cap copy android
+        run: |
+          npx cap copy android
+          rm -f android/app/src/main/assets/public/CONQUR.apk
 
       - name: Make Gradle Wrapper Executable
         run: chmod +x frontend/android/gradlew

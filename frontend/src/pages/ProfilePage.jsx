@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { User, Activity, Map, Trophy, Settings, Medal, LogOut, Hexagon, X, Save } from 'lucide-react';
+import { User, Activity, Map, Trophy, Settings, Medal, LogOut, Hexagon, X, Save, Download } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 export default function ProfilePage() {
@@ -203,6 +203,13 @@ export default function ProfilePage() {
 
                 {/* Account Actions */}
                 <div className="pt-4">
+                    <a
+                        href="/CONQUR.apk"
+                        download="CONQUR.apk"
+                        className="w-full flex items-center justify-center gap-2.5 py-3.5 mb-3 rounded-2xl bg-brand-teal/10 dark:bg-brand-teal/20 text-brand-teal dark:text-emerald-400 font-bold border border-brand-teal/20 hover:bg-brand-teal/20 transition-all text-sm shadow-sm"
+                    >
+                        <Download size={18} /> Download Native Android App (.APK)
+                    </a>
                     <button onClick={logout} className="w-full flex items-center justify-center gap-2 py-4 rounded-2xl bg-red-50 dark:bg-red-950/30 text-red-600 dark:text-red-400 font-bold border border-red-100 dark:border-red-800 hover:bg-red-100 dark:hover:bg-red-950/50 transition-colors">
                         <LogOut size={18} /> Sign Out
                     </button>
