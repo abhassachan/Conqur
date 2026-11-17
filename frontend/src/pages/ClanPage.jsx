@@ -357,7 +357,7 @@ export default function ClanPage() {
                     <div className="bg-white dark:bg-dark-surface p-4 rounded-2xl shadow-sm dark:shadow-lg dark:shadow-black/20 border border-brand-border dark:border-dark-border transition-colors duration-300">
                         <Map className="text-brand-teal mb-2" size={20} />
                         <div className="text-[10px] text-brand-muted dark:text-dark-muted uppercase font-bold tracking-wider mb-0.5">Total Empire</div>
-                        <div className="font-mono text-xl font-bold">{stats.totalArea} <span className="text-xs">m²</span></div>
+                        <div className="font-mono text-xl font-bold">{Math.round(stats.totalArea || 0).toLocaleString()} <span className="text-xs">m²</span></div>
                     </div>
                     <div className="bg-white dark:bg-dark-surface p-4 rounded-2xl shadow-sm dark:shadow-lg dark:shadow-black/20 border border-brand-border dark:border-dark-border transition-colors duration-300">
                         <Activity className="text-brand-orange mb-2" size={20} />
@@ -384,7 +384,7 @@ export default function ClanPage() {
                                             {m.name}
                                             {m._id === user?._id && <span className="text-brand-teal text-xs ml-1">(You)</span>}
                                         </div>
-                                        <div className="text-[10px] text-brand-muted dark:text-dark-muted font-mono">{(m.totalDistance || 0).toFixed(1)}km · {m.totalArea || 0}m²</div>
+                                        <div className="text-[10px] text-brand-muted dark:text-dark-muted font-mono">{(m.totalDistance || 0).toFixed(1)}km · {Math.round(m.totalArea || 0).toLocaleString()}m²</div>
                                     </div>
                                     {clanData.creator?._id === m._id && (
                                         <div className="text-[9px] bg-brand-orange/10 text-brand-orange px-2 py-0.5 rounded uppercase font-bold">Leader</div>
