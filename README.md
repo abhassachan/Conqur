@@ -206,7 +206,7 @@ Minor_Project/
 
 Built with ❤️ by:
 - **Abhas Sachan** ([@abhassachan](https://github.com/abhassachan)) — *Full-Stack & Mobile Development*
-- **Ayush Sharma** ([@Ayush-2101](https://github.com/Ayush-2101)) — *Full-Stack Development & Logic*
+- **Ayush Sharma** ([@sharma28ayush](https://github.com/sharma28ayush)) — *Full-Stack Development & Logic*
 
 *Developed as a Major Academic Engineering Project.*
 
